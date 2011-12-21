@@ -1,4 +1,9 @@
 AmigoOculto::Application.routes.draw do
+  
+  root :to => "application#index"
+  get "groups/new" => "group#new", :as => "new_group"
+  post "groups/create" => "group#create", :as => "create_group"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
