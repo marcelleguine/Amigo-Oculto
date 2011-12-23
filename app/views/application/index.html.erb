@@ -1,6 +1,11 @@
 <% @groups.each do |group| %>
-<h2><%= group.name %></h2>
-<p><%= group.description %></p>
+  <%users = group.participates.collect {|p| p.user}%>
+  <%if users.include? current_user%>
+    <h2><%= group.name %></h2>
+    <p><%= group.description %></p>
+    <%= button_to 'Deletar', delete_group_path(group) %>
+    <%= link_to 'Editar', edit_group_path(group) %>
+  <%end%>
 <%  end %>
 
-<%= link_to 'Criar grupo', new_group_path %>
+<%= link_to 'Criar grupo', new_group_path if user_signed_in?%>

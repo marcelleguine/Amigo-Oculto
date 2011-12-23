@@ -1,14 +1,1 @@
-<% form_for @group, :url => create_group_path do |form| %>
-  <% @group.errors.each do |error, message| %>
-    <p><%= "#{message}" %></p>
-  <% end %>
-  <div>
-    <%= form.label :name, 'Nome: *' %><br />
-    <%= form.text_field :name %>
-  </div>
-  <div>
-    <%= form.label :description, 'Descrição:' %><br />
-    <%= form.text_area :description %>
-  </div>
-  <%= form.submit "Enviar" %>
-<% end %>
+<%= render :partial => 'form', :locals => {:group => @group , :url => create_group_path} %>

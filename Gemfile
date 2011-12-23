@@ -7,6 +7,8 @@ gem 'rails', '3.0.11'
 
 gem 'sqlite3'
 
+gem 'devise'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -26,6 +28,17 @@ gem 'sqlite3'
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
+group :development, :test do
+  gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'webrat'
+  gem 'rspec-rails'  
+end
+
+group :cucumber do
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'cucumber-rails'
+  gem 'cucumber'
+  gem 'spork'
+  gem 'launchy'    # So you can do Then show me the page
+end  
