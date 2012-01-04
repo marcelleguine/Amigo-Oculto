@@ -57,7 +57,23 @@ class GroupController < ApplicationController
   end
   
   def show
+    @invitation = Invitation.new    
+  end
+  
+  def invite
+    @invitation = Invitation.new
+    @invitation.group = @group
+    @invitation.user = current_user
+    @invitation.status = 0    
+  
+	  recipient = email["email"]
+	  subject = email["subject"]
+	  message = email[]
     
+    Emailer.deliver_contact(recipient, subject, message)
+    return if request.xhr?
+    render :text => 'Message sent successfully'
+  
   end
   
 end

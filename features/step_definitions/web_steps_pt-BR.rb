@@ -174,3 +174,7 @@ end
 Dado /^que eu esteja na pagina de edição de grupo "([^"]*)"$/ do |group|
   visit "/groups/#{group}/edit" 
 end
+
+Dado /^que eu esteja na página de visualização do grupo "([^"]*)"$/ do |group|
+  visit "/group/#{group}" 
+end

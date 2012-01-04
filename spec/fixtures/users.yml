@@ -1,6 +1,6 @@
 user1:
   id: 1
-  nome: "João"
+  name: "João"
   email: "abc@gmail.com"
   encrypted_password: "$2a$10$ayJ5XbDzRIz9zeS.c46EGeHntwi1f09H.DD28cjyh6p4DzRqComi6"
   sign_in_count: 1
@@ -16,7 +16,7 @@ user1:
   
 user2:
   id: 2
-  nome: "Priscilla"
+  name: "Priscilla"
   email: "def@gmail.com"
   encrypted_password: "$2a$10$ayJ5XbDzRIz9zeS.c46EGeHntwi1f09H.DD28cjyh6p4DzRqComi6"
   sign_in_count: 1
@@ -32,7 +32,7 @@ user2:
   
 user3:
   id: 3
-  nome: "Marcelle"
+  name: "Marcelle"
   email: "ghi@gmail.com"
   encrypted_password: "$2a$10$ayJ5XbDzRIz9zeS.c46EGeHntwi1f09H.DD28cjyh6p4DzRqComi6"
   sign_in_count: 1

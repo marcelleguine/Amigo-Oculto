@@ -10,3 +10,14 @@
   <%= button_to 'Deletar', delete_group_path(@group) %>
   <%= link_to 'Editar', edit_group_path(@group) %>
 <% end %>
+
+<% form_for :invitation, :url => invite_group_path do |form| %>
+  <% @invitation.errors.each do |error, message| %>
+    <p><%= "#{message}" %></p>
+  <% end %>
+  <div>
+    <%= label_tag :email, 'Email: *' %><br />
+    <%= email_field_tag :email %>
+  </div> 
+  <%= form.submit "Enviar" %>
+<% end %>
