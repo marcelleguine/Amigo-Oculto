@@ -4,4 +4,6 @@ class Group < ActiveRecord::Base
   
   has_many :participates
   
+  has_many :invitations
+  
 end

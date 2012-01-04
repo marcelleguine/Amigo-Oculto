@@ -1,0 +1,12 @@
+<h2><%= @group.name %></h2>
+<p><%= @group.description %></p> 
+<h3> Nome dos participantes do Grupo </h3>
+<ul>
+  <%@users.each_key do |user|%>
+    <li><%= user.name %></li>
+  <% end %>
+</ul>
+<%if @users[current_user] == 2%>
+  <%= button_to 'Deletar', delete_group_path(@group) %>
+  <%= link_to 'Editar', edit_group_path(@group) %>
+<% end %>

@@ -1,14 +1,14 @@
 AmigoOculto::Application.routes.draw do
   
   devise_for :users
-
+  
   root :to => "application#index"
   get "groups/new" => "group#new", :as => "new_group"
   post "groups/create" => "group#create", :as => "create_group"
   get "groups/:id/edit" => "group#edit", :as => "edit_group"
   post "groups/:id/update" => "group#update", :as => "update_group"
   post "groups/:id/delete" => "group#delete", :as => "delete_group"
-  
+  get "group/:id" => "group#show", :as => "show_group"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

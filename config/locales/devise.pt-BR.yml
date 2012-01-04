@@ -3,7 +3,8 @@ pt-BR:
     attributes:
       user:
         password: "Senha"
-
+        name: "Nome"
+        
   devise:
     resend: Reenviar instruções de confirmação
     sign_in: Login
@@ -85,6 +86,8 @@ pt-BR:
       destroyed: "Sua conta foi cancelada com sucesso. Esperamos vê-lo novamente em breve."
       signed_up: "Você foi cadastrado com sucesso."
       updated: "Você atualizou a sua conta com sucesso."
+      user: 
+        inactive_signed_up: "Você têm que ativar sua conta por email."          
     sessions:
       new:
         alpha_software: "Você está prestes a usar um software alpha."

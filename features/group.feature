@@ -6,8 +6,6 @@
 Funcionalidade: Validar Grupo
   Testar o cadastro de grupo
     
-  @javascript
-
   Cenário: Criação de grupos com usuario logado
     Dado que eu estou logado com "abc@gmail.com" e senha "123456"
     Dado que eu estou na pagina principal
@@ -50,3 +48,13 @@ Cenário: Edição de grupos com usuario logado
     Dado que eu estou logado com "def@gmail.com" e senha "123456"
     Dado que eu esteja na pagina de edição de grupo "1"
     Então eu devo estar na pagina principal
+
+Cenário: Edição de grupos com usuario não admin
+    Dado que eu estou logado com "ghi@gmail.com" e senha "123456"
+    Dado que eu esteja na pagina de edição de grupo "1"
+    Então eu devo estar na pagina principal
+
+Cenário: Não ver o link editar com usuario não admin
+    Dado que eu estou logado com "ghi@gmail.com" e senha "123456"
+    Dado que eu estou na pagina principal
+    Então eu não devo ver "Editar"
