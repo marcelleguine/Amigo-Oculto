@@ -12,6 +12,7 @@ AmigoOculto::Application.routes.draw do
   post "group/:id/invite" => "group#invite", :as => "invite_group"
   get "group/:id/accept/:code" => "group#accept", :as => "accept_group"
   post "group/:id/exit" => "group#exit", :as => "exit_group"
+  post "group/:id/random" => "group#random", :as => "random_group"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

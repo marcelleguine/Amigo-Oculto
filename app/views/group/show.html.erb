@@ -6,7 +6,9 @@
     <li><%= user.name %></li>
   <% end %>
 </ul>
+<p> <%= "O seu amigo oculto é: #{@users[current_user].friend.name}" unless @users[current_user].friend.nil? %> </p>
 <%if @users[current_user].status == 2%>
+  <%= button_to 'Sortear', random_group_path(@group) %>
   <%= button_to 'Deletar', delete_group_path(@group) %>
   <%= link_to 'Editar', edit_group_path(@group) %>
   <% form_for :invitation, :url => invite_group_path do |form| %>

@@ -2,7 +2,7 @@
 class GroupController < ApplicationController
   
   before_filter :validate_user_in_group, :only => [:show, :exit]
-  before_filter :admin_validate, :only => [:delete, :edit, :update, :invite]
+  before_filter :admin_validate, :only => [:delete, :edit, :update, :invite, :random]
   before_filter :find, :only => [:accept]
   
   def find
@@ -113,4 +113,18 @@ class GroupController < ApplicationController
       redirect_to root_path, :alert => "Você não conseguiu sair deste grupo"
     end
   end
+  
+  def random    
+    list = @users.keys # 1 2 3 4
+    list.shuffle! # 2 1 4 3 
+    current = list[-1] # 3
+    list.each do |user|
+      participate = @users[user] # 2, 1, 4, 3
+      participate.friend = current # 2 -> 3, 1 -> 2, 4 -> 1, 3 -> 4
+      participate.save
+      current = @users[user] # 2, 1, 4
+    end
+    redirect_to show_group_path(@group), :notice => "O amigo oculto foi sorteado"
+  end
+  
 end
