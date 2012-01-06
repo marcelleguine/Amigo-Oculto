@@ -10,7 +10,8 @@ AmigoOculto::Application.routes.draw do
   post "groups/:id/delete" => "group#delete", :as => "delete_group"
   get "group/:id" => "group#show", :as => "show_group"
   post "group/:id/invite" => "group#invite", :as => "invite_group"
-  
+  get "group/:id/accept/:code" => "group#accept", :as => "accept_group"
+  post "group/:id/exit" => "group#exit", :as => "exit_group"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
